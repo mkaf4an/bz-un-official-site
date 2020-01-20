@@ -35,20 +35,20 @@ header {
   z-index: 100;
 }
 
-.width-gage {
+/* .width-gage {
   margin-left: -20px;
   width: 1630px;
   height: 10px;
   background-color: rgba(255, 0, 0, 0.5);
-}
+} */
 
-.height-gage {
+/* .height-gage {
   float: left;
   margin-left: -20px;
   width: 10px;
   height: 870px;
   background-color: rgba(0, 17, 255, 0.5) ;
-}
+} */
 
 #header-logo {
   position: fixed;
