@@ -17,221 +17,238 @@
   <body>
 <!-- --------------------header-------------------- -->
     <header>
-      <div class="width-gage"></div>
-      <div class="height-gage"></div>
       <div class="container">
+        <div class="width-gage w1400">max:1400</div>
+        <div class="width-gage w900">tab:900</div>
+        <div class="width-gage w500">sp:500</div>
+        <div class="width-gage w423">xperia:423</div>
+        <div class="height-gage h680"></div>
+        <p class="h680-text">xperia:680</p>
         <a href="">
           <div id="header-logo">
-          <img src="img/bz-logo-l.png" width="150">
+          <img src="img/bz-logo-l.png">
         </div>
         <div id="header-logo-s">
-          <img src="img/bz-logo-s.png" width="50">
+          <img src="img/bz-logo-s.png">
         </div>
         </a>
-        <div class="header-left">
-          <a href="http://bz-vermillion.com/news/" class="link1">NEWS</a>
-          <a href="http://bz-vermillion.com/biography/" class="link1 left-space">BIOGRAPHY</a>
-          <a href="http://bz-vermillion.com/discography/" class="link1 left-space">DISCOGRAPHY</a>
-          <a href="http://bz-party.com/clubgym/" class="link1 left-space" target="_blank">
-            TOUR / TICKET
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-          <a href="https://www.bz-party.com/" class="link1 left-space" target="_blank">
-            FANCLUB
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-          <span id="link1-solo" class="link1 left-space">
-            SOLO
-            <div id="solo-modal">
+        <div id="menu-bar"><i class="fas fa-bars"></i></div>
+        <ul id="header-left">
+          <li><i id="menu-close-btn" class="fas fa-times"></i id="menu-close-btn"></li>
+          <li><a href="http://bz-vermillion.com/news/">NEWS</a></li>
+          <li><a href="http://bz-vermillion.com/biography/" class="left-bar">BIOGRAPHY</a></li>
+          <li><a href="http://bz-vermillion.com/discography/" class="left-bar">DISCOGRAPHY</a></li>
+          <li>
+            <a href="http://bz-party.com/clubgym/" target="_blank">
+              <span class="left-bar">TOUR / TICKET</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.bz-party.com/" target="_blank">
+              <span class="left-bar">FANCLUB</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </li>
+          <li id="link-solo">
+            <span id="header-solo" class="left-bar">SOLO</span>
+            <div id="solo-modal" class="modal">
               <a href="http://houseofstrings.jp/" target="_blank">
-                <p id="tak-link" class="link1">
-                  TAK MATSUMOTO
+                <p id="tak-link">
+                  <span class="solo-icon">SOLO</span>
+                  <span id="tak">TAK MATSUMOTO</span>
                   <i class="fas fa-external-link-alt"></i>
                 </p>
               </a>
               <a href="http://en-zine.jp/pc/index.html" target="_blank">
-                <p id="inaba-link" class="link1">
-                  KOSHI INABA
+                <p id="inaba-link">
+                  <span class="solo-icon">SOLO</span>
+                  <span>KOSHI INABA</span>
                   <i class="fas fa-external-link-alt"></i>
                 </p>
               </a>
             </div>
-          </span>
-          <a href="https://www.bzthestore.com/" class="link1 left-space" target="_blank">
-            STORE
+          </li>
+          <li>
+            <a href="https://www.bzthestore.com/" target="_blank">
+            <span class="left-bar">STORE</span>
             <i class="fas fa-external-link-alt"></i>
-          </a>
-          <div class="header-left-clear"></div>
-        </div>
-        <div class="header-right">
-          <span id="link1-sns" class="link1">
-            OFFICIAL SNS
-            <div id="sns-modal">
-              <a href="https://www.instagram.com/bz_official_insta/" target="_blank" class="link1">
-                <i class="fab fa-instagram"></i>  
-              </a>
-              <a href="http://www.youtube.com/Bz" target="_blank" class="link1">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="http://twitter.com/bz_official" target="_blank" class="link1">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://www.facebook.com/bz.official" target="_blank" class="link1">
-                <i class="fab fa-facebook"></i>
-              </a>
+            </a>
+          </li>
+        </ul>
+        <ul id="header-right">
+          <li id="link-sns">
+            <span id="header-sns">OFFICIAL SNS</span>
+            <div id="sns-modal" class="modal">
+              <div id="sns-links">
+                <a href="https://www.instagram.com/bz_official_insta/" target="_blank">
+                  <i class="fab fa-instagram"></i>  
+                </a>
+                <a href="http://www.youtube.com/Bz" target="_blank">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="http://twitter.com/bz_official" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/bz.official" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
             </div>
-          </span>
-          <a href="http://bz-vermillion.com/schedule/" class="link1 left-space" target="_blank">
-            <i class="far fa-calendar-alt"></i>
-          </a>
-          <div class="header-right-clear"></div>
-        </div>
+          </li>
+          <li id=calendar>
+            <a href="http://bz-vermillion.com/schedule/" class="left-bar" target="_blank">
+              <i class="far fa-calendar-alt"></i>
+            </a>
+          </li>
+        </ul>
         <div class="header-clear"></div>
       </div>
     </header>
-<!-- --------------------main-------------------- -->
-    <div class="main">
+<!-- --------------------slides-------------------- -->
+    <div id="slides-wrapper">
       <div class="container">
-        <div class="main-dummy"></div>
-<!-- --------------------main1-------------------- -->
-        <div id="main1-wrapper">
-          <div id="main1">
-            <ul class="slides">
-              <li class="slide">
-                <img src="img/visual-slide-01.jpg">
-                <img src="img/visual_slide_inf_space.png" class="slide-comment-space">
-                <div class="slide-comment-1">
-                  <div class="scroll-text">
-                    <span class="red-char">TOPIC!</span>
-                    <span>2019.12.09UP</span>
-                    <span>INABA/SARAS LIVE TOUR 2020 開催決定!!</span>
-                  </div>
-                </div>
-                <a href="http://bz-vermillion.com/news/191209.html">
-                  <span class="slide-comment-2 red-char right-slide">Read More ></span>
-                </a>
+        <div id="slide-dummy"></div>
+        <div id="slide-area">
+          <ul id="slides">
+            <li id="slide1" class="slide">
+              <img src="img/visual-slide-01.jpg">
+              <img src="img/visual_slide_inf_space.png" class="slide-text-area">
+              <a href="http://bz-vermillion.com/news/191209.html" class="scroll-text-area">
+                <p class="scroll-text">
+                  <span class="red-char">TOPIC!</span>
+                  <span>2019.12.09UP</span>
+                  <span>INABA/SARAS LIVE TOUR 2020 開催決定!!</span>
+                </p>
+              </a>
+              <a href="http://bz-vermillion.com/news/191209.html" class="slide-text right-shift">
+                <span class="red-char">Read More ></span>
+              </a>
+            </li>
+            <li id="slide2" class="slide">
+              <img src="img/visual-slide-02.jpg">
+            </li>
+          </ul>
+          <div class="slide-btn prev-btn">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="slide-btn next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="down-btn">
+            <i class="fas fa-chevron-down scroll-btn" href="#carousel-wrapper"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- --------------------carousel-------------------- -->
+    <div id="carousel-wrapper">
+      <div class="container">
+        <div id="carousel">
+          <div id="carousel-items-wrapper">
+            <ul id="carousel-items">
+              <li class="carousel-item">
+                <img src="img/carousel-01.png" class="carousel-icon">
+                <p class="carousel-text">INABA/SARAS LIVE TOUR 2020 開催決定！！</p>
               </li>
-              <li class="slide">
-                <img src="img/visual-slide-02.jpg">
+              <li class="carousel-item">
+                <img src="img/carousel-02.png" class="carousel-icon">
+                <p class="carousel-text">ALBUM 「NEW LOVE」NOW ON SALE</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-03.png" class="carousel-icon">
+                <p class="carousel-text">B'z Live-Gym 2019 -Whole Lotta NEW LOVE</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-04.png" class="carousel-icon">
+                <p class="carousel-text">DVD & Blue-Ray 「B'z Live-Gym Pleasure 2018 -HINOTORI-」<br>NOW ON SALE</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-05.png" class="carousel-icon">
+                <p class="carousel-text">「B'z ザ・クロニクル」 発売中!!</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-06.png" class="carousel-icon">
+                <p class="carousel-text">B'z COMPLETE SINGLE BOX NOW ON SALE</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-07.png" class="carousel-icon">
+                <p class="carousel-text">B'z 30 YEARS & DINOSAUR</p>
+              </li>
+              <li class="carousel-item">
+                <img src="img/carousel-08.png" class="carousel-icon">
+                <p class="carousel-text">B'z HISTORY 1988-2016</p>
               </li>
             </ul>
-            <div class="slide-btn prev-btn">
-              <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="slide-btn next-btn">
-              <i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="down-btn">
-              <i class="fas fa-chevron-down scroll-btn" href="#main2-wrapper"></i>
-            </div>
+            <i id="carousel-prev" class="fas fa-chevron-left"></i>
+            <i id="carousel-next" class="fas fa-chevron-right"></i>
           </div>
         </div>
-<!-- --------------------main2-------------------- -->
-        <div id="main2-wrapper">
-          <div class="main2">
-            <div class="main2-items-wrapper">
-              <ul class="main2-items">
-                <li class="main2-item">
-                  <img src="img/main2-01.png" class="main2-icon">
-                  <p class="main2-text">INABA/SARAS LIVE TOUR 2020<BR>開催決定！！</p>
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-02.png" class="main2-icon">
-                  <p class="main2-text">ALBUM 「NEW LOVE」<BR>NOW ON SALE</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-03.png" class="main2-icon">
-                  <p class="main2-text">B'z Live-Gym 2019<br>-Whole Lotta NEW LOVE</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-04.png" class="main2-icon">
-                  <p class="main2-text">DVD & Blue-Ray 「B'z Live-Gym Pleasure<br>2018 -HINOTORI-」<br>NOW ON SALE</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-05.png" class="main2-icon">
-                  <p class="main2-text">B'z ザ・クロニクル<br>発売中!!</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-06.png" class="main2-icon">
-                  <p class="main2-text">B'z COMPLETE SINGLE BOX<br>NOW ON SALE</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-07.png" class="main2-icon">
-                  <p class="main2-text">B'z 30 YEARS & DINOSAUR</p class="main2-text">
-                </li>
-                <li class="main2-item">
-                  <img src="img/main2-08.png" class="main2-icon">
-                  <p class="main2-text">B'z HISTORY 1988-2016</p class="main2-text">
-                </li>
-              </ul>
-            </div>
-          </div>
-          <i id="carousel-prev" class="fas fa-chevron-left"></i>
-          <i id="carousel-next" class="fas fa-chevron-right"></i>
-        </div>
+      </div>
+    </div>
 <!-- --------------------news-------------------- -->
-        <div class="news-wrapper">
-          <h2 class="title">NEWS</h2>
-          <div class="topics">
-            <div class="topic">
-              <a href="http://bz-vermillion.com/news/200110.html"></a>
-              <img src="img/newmark.png" class="topic-new">
-              <span class="topic-day">2020.01.10</span>
-              <span class="topic-category">FC</span>
-              <span class="topic-title">会報124号の発送についてのお知らせ</span>
-              <span class="topic-common">Read More ></span>
-              <div class="topic-clear"></div>
-            </div>
-            <div class="topic">
-              <a href="https://bz-party.com/party/join"></a>
-              <img src="img/newmark.png" class="topic-new">
-              <span class="topic-day">2020.01.10</span>
-              <span class="topic-category">FC</span>
-              <span class="topic-title">「be with! Vol.121」更新</span>
-              <span class="topic-common">Read More ></span>
-              <div class="topic-clear"></div>
-            </div>
-            <div class="topic">
-              <a href="http://bz-vermillion.com/news/200107.html"></a>
-              <!-- <img src="img/newmark.png" class="topic-new"> -->
-              <span class="topic-day">2020.01.07</span>
-              <span class="topic-category">B'z</span>
-              <span class="topic-title">B’z「マジェスティック」主題歌・ポッキー新TV-CM「家族にありがとう篇」オンエア開始!!</span>
-              <span class="topic-common">Read More ></span>
-              <div class="topic-clear"></div>
-            </div>
-            <div class="topic">
-              <a href="http://bz-vermillion.com/news/200106.html"></a>
-              <!-- <img src="img/newmark.png" class="topic-new"> -->
-              <span class="topic-day">2020.01.06</span>
-              <span class="topic-category">Club-Gym</span>
-              <span class="topic-title">INABA／SALAS LIVE TOUR 2020 B'z Club-Gym抽選販売受付開始!!</span>
-              <span class="topic-common">Read More ></span>
-              <div class="topic-clear"></div>
-            </div>
-          </div>
-          <a href="http://bz-vermillion.com/news/">
-            <h3 class="view-btn right-slide">View All news ></h3>
-          </a>
+    <div id="news-wrapper">
+      <h2 class="title">NEWS</h2>
+      <div id="topics">
+        <div class="topic">
+          <a href="http://bz-vermillion.com/news/200110.html"></a>
+          <img src="img/newmark.png" class="topic-new">
+          <span class="topic-day">2020.01.10</span>
+          <span class="topic-category"><span>FC</span></span>
+          <span class="topic-title">会報124号の発送についてのお知らせ</span>
+          <span class="topic-common">Read More ></span>
+          <div class="topic-clear"></div>
         </div>
+        <div class="topic">
+          <a href="https://bz-party.com/party/join"></a>
+          <img src="img/newmark.png" class="topic-new">
+          <span class="topic-day">2020.01.10</span>
+          <span class="topic-category"><span>FC</span></span>
+          <span class="topic-title">「be with! Vol.121」更新</span>
+          <span class="topic-common">Read More ></span>
+          <div class="topic-clear"></div>
+        </div>
+        <div class="topic">
+          <a href="http://bz-vermillion.com/news/200107.html"></a>
+          <span class="topic-day">2020.01.07</span>
+          <span class="topic-category"><span>B'z</span></span>
+          <span class="topic-title">B’z「マジェスティック」主題歌・ポッキー新TV-CM「家族にありがとう篇」オンエア開始!!</span>
+          <span class="topic-common">Read More ></span>
+          <div class="topic-clear"></div>
+        </div>
+        <div class="topic">
+          <a href="http://bz-vermillion.com/news/200106.html"></a>
+          <span class="topic-day">2020.01.06</span>
+          <span class="topic-category"><span>Club-Gym</span></span>
+          <span class="topic-title">INABA／SALAS LIVE TOUR 2020 B'z Club-Gym抽選販売受付開始!!</span>
+          <span class="topic-common">Read More ></span>
+          <div class="topic-clear"></div>
+        </div>
+      </div>
+      <a href="http://bz-vermillion.com/news/">
+        <h3 class="view-btn right-slide">View All news ></h3>
+      </a>
+    </div>
 <!-- --------------------sns-------------------- -->
-        <div class="sns-wrapper">
-          <h2 class="title">SNS</h2>
-          <div class="sns-select-wrapper">
-            <div class="sns-select">
-              <div class="instagram-select sns-select-btn active-sns-btn">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-              </div>
-              <div class="facebook-select sns-select-btn">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-              </div>
-              <div class="sns-clear"></div>
+    <div id="sns-wrapper">
+      <div class="container">
+        <h2 class="title">SNS</h2>
+        <div id="sns-select-wrapper">
+          <div class="sns-select">
+            <div class="sns-select-btn instagram-select active-sns-btn">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
             </div>
+            <div class="sns-select-btn facebook-select">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </div>
+            <div class="sns-clear"></div>
           </div>
-          <div class="sns-tab instagram-tab active-tab">
-            <div class="posts instagram-posts active-sns">
+        </div>
+        <div class="sns-tab instagram-tab active-tab">
+          <div id="instagram-posts" class="posts active-sns">
+            <div class="post-wrapper">
               <div class="post">
                 <img src="img/sns-01.jpg" class="post-img">
                 <div class="post-contents">
@@ -286,46 +303,49 @@
               </div>
               <div class="post-clear"></div>
             </div>
-            <a href="https://www.instagram.com/bz_official_insta/" target="_blank">
-              <h3 class="view-btn right-slide">Viwe All Posts ></h3>
-            </a>
           </div>
-          <div class="sns-tab facebook-tab">
-            <div class="posts facebook-posts">
-              <h5>投稿を取得できません。時間をおいて再度ご覧ください。</h5>
-            </div>
-            <a href="https://www.facebook.com/bz.official" target="_blank">
-              <h3 class="view-btn right-slide">Viwe All Posts ></h3>
-            </a>
-          </div>
-        </div>
-<!-- --------------------link-------------------- -->
-        <div class="link-wrapper">
-          <p class="title">LINK</p>  
-          <div class="banners">
-            <a href="https://www.bz-party.com/">
-              <img src="img/link_fanclub.jpg" class="banner bz-party">
-            </a>
-            <a href="http://bz-vermillion.com/discography/">
-              <img src="img/link_disco.jpg" class="banner discograghy right">
-            </a>
-            <a href="https://www.bzthestore.com/">
-              <img src="img/link_store_pc.png" class="banner store">
-            </a>
-            <a href="http://houseofstrings.jp/">
-              <img src="img/link_matsumoto.jpg" class="banner matsumoto">
-            </a>
-            <a href="http://en-zine.jp/">
-              <img src="img/link_inaba.jpg" class="banner inaba right">
-            </a>
-            <div class="banner-clear"></div>
-          </div>
-          <a href="http://bz-vermillion.com/charity/" class="charity">
-            <p class="banner releaf">災害支援報告はこちら</p>
+          <a href="https://www.instagram.com/bz_official_insta/" target="_blank">
+            <h3 class="view-btn right-slide">Viwe All Posts ></h3>
           </a>
-          <div class="scroll-btn" href="html, body"><i class="fas fa-chevron-up"></i></div>
+        </div>
+        <div class="sns-tab facebook-tab">
+          <div id="facebook-posts" class="posts">
+            <h5>投稿を取得できません。時間をおいて再度ご覧ください。</h5>
+          </div>
+          <a href="https://www.facebook.com/bz.official" target="_blank">
+            <h3 class="view-btn right-slide">Viwe All Posts ></h3>
+          </a>
         </div>
       </div>
+    </div>
+<!-- --------------------link-------------------- -->
+    <div id="link-wrapper">
+      <p class="title">LINK</p>  
+      <div class="banners">
+        <a href="https://www.bz-party.com/">
+          <img src="img/link_fanclub.jpg" class="banner left bz-party">
+        </a>
+        <a href="http://bz-vermillion.com/discography/">
+          <img src="img/link_disco.jpg" class="banner right discograghy">
+        </a>
+        <a href="https://www.bzthestore.com/">
+          <img src="img/link_store_pc.png" class="banner cnt store-pc">
+        </a>
+        <a href="https://www.bzthestore.com/">
+          <img src="img/link_store_sp.png" class="banner cnt store-sp">
+        </a>
+        <a href="http://houseofstrings.jp/">
+          <img src="img/link_matsumoto.jpg" class="banner left matsumoto">
+        </a>
+        <a href="http://en-zine.jp/">
+          <img src="img/link_inaba.jpg" class="banner right inaba">
+        </a>
+        <div class="banner-clear"></div>
+      </div>
+      <a href="http://bz-vermillion.com/charity/" class="charity">
+        <p class="banner releaf">災害支援報告はこちら</p>
+      </a>
+      <div class="scroll-btn" href="html, body"><i class="fas fa-chevron-up"></i></div>
     </div>
 <!-- --------------------footer-------------------- -->
     <footer>
@@ -346,14 +366,20 @@
           <div class="footer-clear"></div>
         </div>
         <div class="footer-lower">
-          <div class="footer-left copyright">Copyright(C) VERMILLION RECORDS, Inc. All Rights Reserved.</div>
-          <div class="footer-right">SHARE :
-            <a href="https://twitter.com/intent/tweet?original_referer=http%3A//bz-vermillion.com/news/200117.html&text=B%27z%20Official%20Website%uFF5CNEWS&tw_p=tweetbutton&url=http%3A//bz-vermillion.com/news/200117.html" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?src=bm&u=http%3A//bz-vermillion.com/news/200117.html" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-            </a>
+          <div class="footer-right footer-share">
+            <span>SHARE :</span>
+            <div class="footer-share-icon">
+              <a href="https://twitter.com/intent/tweet?original_referer=http%3A//bz-vermillion.com/news/200117.html&text=B%27z%20Official%20Website%uFF5CNEWS&tw_p=tweetbutton&url=http%3A//bz-vermillion.com/news/200117.html" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?src=bm&u=http%3A//bz-vermillion.com/news/200117.html" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+            <div class="footer-clear"></div>
+          </div>
+          <div class="footer-left copyright">
+            <p>Copyright(C) VERMILLION RECORDS, Inc. All Rights Reserved.</p>
           </div>
           <div class="footer-clear"></div>
           <div class="scroll-btn bottom-btn" href="html, body"><i class="fas fa-chevron-up"></i></div>
