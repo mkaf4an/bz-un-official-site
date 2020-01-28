@@ -1,5 +1,7 @@
 $(function(){
 
+// ---------------左上ロゴの拡大縮小---------------
+
   $(window).scroll(function(){
     if($(window).scrollTop() > 60) {
       $("#header-logo-s").fadeIn();
@@ -10,15 +12,26 @@ $(function(){
     }
   });
 
+// ---------------/左上ロゴの拡大縮小---------------
+
+// ---------------右下スクロールボタンの表示非表示---------------
+// ---------------変数は最下段に定義---------------
+
+if(window.matchMedia("(min-width: 600px)").matches){
   $(window).scroll(function(){
-    if($(window).scrollTop() > 430 && $(window).scrollTop() < 2800) {
+    if($(window).scrollTop() > 430 && $(window).scrollTop() < bottomBtnHide) {
       $(".bottom-btn").show();
     }else{
       $(".bottom-btn").hide();
     }
   });
+}
 
-  $("#link1-solo").hover(
+// ---------------/右下スクロールボタンの表示非表示---------------
+
+// ---------------モーダル表示非表示---------------
+
+$("#link-solo").hover(
     function(){
       $("#solo-modal").show();
     },
@@ -27,7 +40,7 @@ $(function(){
     }
   )
 
-  $("#link1-sns").hover(
+  $("#link-sns").hover(
     function(){
       $("#sns-modal").show();
     },
@@ -36,58 +49,84 @@ $(function(){
     }
   )
 
-var $interval = 7000;
+// ---------------/モーダル表示非表示---------------
+
+// ---------------resスライドメニュー表示ー---------------
+
+  $("#menu-bar").click(function(){
+    $("#header-left, #menu-close-btn, #header-right").show();
+    $("#header-left, #header-right").animate({
+      "right" : 0
+    }, 300);
+    $("#slides li").css("opacity", 0.3);
+  })
+
+  $("#menu-close-btn").click(function(){
+    $("#header-left, #header-right").animate({
+      "right" : "-280px"
+    }, 300);
+    $("#slides li").css("opacity", 1);
+  })
+
+// ---------------/resスライドメニュー表示ー---------------
+
+// ---------------スライド切替---------------
+
+$("#slides-wrapper #slide-area #slides .slide").hide();
+$("#slides-wrapper #slide-area #slides .slide:first").addClass("active").show();
+
 var $fade_speed = 500;
-$("#main1-wrapper #main1 .slides .slide").hide();
-$("#main1-wrapper #main1 .slides .slide:first").addClass("active").show();
+
+function slideChange(){
+  var $activeSlide = $("#slides-wrapper #slide-area #slides .slide.active");
+  var activeIndex = $("#slides-wrapper #slide-area #slides .slide").index($(".active"));
+  var $nextSlide = $activeSlide.next();
+  if(activeIndex == $("#slides-wrapper #slide-area #slides .slide").length - 1) {
+    $nextSlide = $("#slides-wrapper #slide-area #slides .slide:first")
+  }
+  $activeSlide.fadeOut($fade_speed).removeClass("active");
+  $nextSlide.fadeIn($fade_speed).addClass("active");
+}
 
 var slideTimer;
+var $interval = 7000;
 
 function startSlideTimer(){
-  slideTimer = setInterval(function(){
-    var $activeSlide = $("#main1-wrapper #main1 .slides .slide.active");
-    var $nextSlide = $activeSlide.next();
-    var activeIndex = $("#main1-wrapper #main1 .slides .slide").index($(".active"));
-    if(activeIndex == $("#main1-wrapper #main1 .slides .slide").length - 1) {
-      $nextSlide = $("#main1-wrapper #main1 .slides .slide:first")
-    }
-    $activeSlide.fadeOut($fade_speed).removeClass("active");
-    $nextSlide.fadeIn($fade_speed).addClass("active");
-  }, $interval)
+  slideTimer = setInterval(slideChange, $interval)
 }
 
 function stopSlideTimer(){
   clearInterval(slideTimer);
 }
 
+// $(window).focus();
 startSlideTimer();
+// $(window).focus(startSlideTimer).blur(stopSlideTimer);
 
 $(".slide-btn").click(function() {
-  var $activeSlide = $("#main1-wrapper #main1 .slides .slide.active");
-  var activeIndex = $("#main1-wrapper #main1 .slides .slide").index($(".active"));
-  $activeSlide.removeClass(".active");
+  var $activeSlide = $("#slides-wrapper #slide-area #slides .slide.active");
+  var activeIndex = $("#slides-wrapper #slide-area #slides .slide").index($(".active"));
+  var $nextSlide = $activeSlide.next();
   if($(this).hasClass("next-btn")) {
-    if (activeIndex == $("#main1-wrapper #main1 .slides .slide").length-1) {
-      $("#main1-wrapper #main1 .slides .slide:first").addClass("active");
-    }else{
-      $activeSlide.next().addClass("active");
+    if(activeIndex == $("#slides-wrapper #slide-area #slides .slide").length-1) {
+      $nextSlide = $("#slides-wrapper #slide-area #slides .slide:first");
     }
   } else {
     if (activeIndex == 0) {
-      $("#main1-wrapper #main1 .slides .slide:last").addClass("active");
+      $nextSlide = $("#slides-wrapper #slide-area #slides .slide:last");
     }else{
-    $activeSlide.prev().addClass("active");
+      $nextSlide = $activeSlide.prev();
     }
-  }
-  var $nextSlide = $activeSlide.next();
-  if(activeIndex == $("#main1-wrapper #main1 .slides .slide").length - 1) {
-    $nextSlide = $("#main1-wrapper #main1 .slides .slide:first")
   }
   $activeSlide.fadeOut($fade_speed).removeClass("active");
   $nextSlide.fadeIn($fade_speed).addClass("active");
   stopSlideTimer();
   startSlideTimer();
 })
+
+// ---------------/スライド切替---------------
+
+// ---------------スライド下ボタン---------------
 
   $(".scroll-btn").click(function(){
     var id = $(this).attr("href");
@@ -97,31 +136,45 @@ $(".slide-btn").click(function() {
     }, 400);
   });
 
-  $(".main2-items-wrapper").css("width", 300*8+"px");
-  $(".main2-items-wrapper .main2-items li:last").prependTo(".main2-items");
-  $(".main2-items-wrapper").css("margin-left", "-300px");
+// ---------------/スライド下ボタン---------------
 
-  $("#carousel-prev").click(function(){
-    $(".main2-items-wrapper").animate({
-      marginLeft : parseInt($(".main2-items-wrapper").css("margin-left"))+300+"px"
-      },"slow","swing",
-      function(){
-        $(".main2-items-wrapper").css("margin-left","-300px")
-        $(".main2-items-wrapper .main2-items li:last").prependTo(".main2-items");
-      });
-  });
+// ---------------カルーセル---------------
 
-  $("#carousel-next").click(function(){
-    $(".main2-items-wrapper").animate({
-      marginLeft : parseInt($(".main2-items-wrapper").css("margin-left"))-300+"px"
-      },"slow","swing",
-      function(){
-        $(".main2-items-wrapper").css("margin-left","-300px")
-        $(".main2-items-wrapper .main2-items li:first").appendTo(".main2-items");
-      });
-  });
+  if(window.matchMedia("(min-width: 600px)").matches){
+    var $carouselItemsWrapper = $("#carousel-items-wrapper");
+    var wCarouselItemsWrapper = $carouselItemsWrapper.outerWidth();
+    var wCarouselItem = wCarouselItemsWrapper/4
+    $("#carousel-items").css("width", wCarouselItem * 8 + "px");
+    $(".carousel-item").css("width", wCarouselItem + "px");
+    $("#carousel-items-wrapper #carousel-items li:last").prependTo("#carousel-items");
+    $("#carousel-items").css("margin-left", "-"+wCarouselItem+"px");
 
-  var timerID = setInterval(function(){$("#carousel-next").click()},5000);
+    $("#carousel-prev").click(function(){
+      $("#carousel-items").animate({
+        marginLeft : parseInt($("#carousel-items").css("margin-left"))+wCarouselItem+"px"
+        },"slow","swing",
+        function(){
+          $("#carousel-items").css("margin-left","-"+wCarouselItem+"px")
+          $("#carousel-items-wrapper #carousel-items li:last").prependTo("#carousel-items");
+        });
+    });
+
+    $("#carousel-next").click(function(){
+      $("#carousel-items").animate({
+        marginLeft : parseInt($("#carousel-items").css("margin-left"))-wCarouselItem+"px"
+        },"slow","swing",
+        function(){
+          $("#carousel-items").css("margin-left","-"+wCarouselItem+"px")
+          $("#carousel-items-wrapper #carousel-items li:first").appendTo("#carousel-items");
+        });
+    });
+
+    var timerID = setInterval(function(){$("#carousel-next").click()},5000);
+  }
+
+// ---------------/カルーセル---------------
+
+// ---------------newsホバー---------------
 
   $(".topic").hover(
     function(){
@@ -138,6 +191,26 @@ $(".slide-btn").click(function() {
     }
   )
 
+// ---------------/newsホバー---------------
+
+// ---------------sns-postサイズ取得, 変更---------------
+
+  var $posts = $(".posts");
+  var wPosts = $posts.outerWidth();
+  var wPost = wPosts/4;
+  if(wPost < 200) {wPost = 200;}
+  $(".post-wrapper").css("width", wPost*4+"px");
+  $(".post").css("width", wPost+"px");
+  var wPostImage = wPost*0.95;
+  $(".post-img").css("width", wPostImage+"px");
+  $(".post-img").css("height", wPostImage+"px");
+  $(".post-contents").css("width", wPostImage+"px");
+  $(".post-link").css("width", wPostImage+"px");
+
+// ---------------/sns-postサイズ取得, 変更---------------
+
+// ---------------sns-select---------------
+
   $(".sns-select-btn").click(function(){
     $(".sns-select-btn").removeClass("active-sns-btn")
     $(".sns-tab").removeClass("active-tab");
@@ -150,6 +223,10 @@ $(".slide-btn").click(function() {
     }
   });
 
+// ---------------/sns-select---------------
+
+// ---------------linkホバー---------------
+
   $(".banner").hover(
     function(){
       $(this).css("opacity", "0.5");
@@ -159,10 +236,14 @@ $(".slide-btn").click(function() {
     }
   );
 
-  $("#carousel-prev").click(function(){
-    $(".main2-items").css("")
-  })
+// ---------------/linkホバー---------------
 
+// ---------------コンテンツ高さ取得---------------
 
+var contentH = document.body.scrollHeight;
+var moniH = $(window).height();
+var bottomBtnHide = contentH-moniH-430;
+
+// ---------------/コンテンツ高さ取得---------------
 
 });
