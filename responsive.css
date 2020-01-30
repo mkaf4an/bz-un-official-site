@@ -17,7 +17,7 @@
     padding-left: 40px;
     font-size: 18px;
     line-height: 45px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0);
   }
 
   #header-left #menu-close-btn {
@@ -79,7 +79,7 @@
     padding-left: 30px;
     font-size: 18px;
     line-height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0);
     border-top: solid 1px gray;
   }
 
